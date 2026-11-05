@@ -1,0 +1,90 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum MealType {
+  BREAKFAST
+  LUNCH
+  SNACK
+}
+
+model Role {
+  id    Int    @id @default(autoincrement())
+  name  String @unique
+  users User[]
+}
+
+model User {
+  id           Int        @id @default(autoincrement())
+  email        String     @unique
+  passwordHash String
+  fullName     String
+  roleId       Int
+  role         Role       @relation(fields: [roleId], references: [id])
+  student      Student?
+  favorites    Favorite[]
+  createdAt    DateTime   @default(now())
+}
+
+model Student {
+  id          Int    @id @default(autoincrement())
+  userId      Int    @unique
+  classNumber String
+  allergies   String?
+  user        User   @relation(fields: [userId], references: [id])
+}
+
+model Category {
+  id     Int     @id @default(autoincrement())
+  name   String  @unique
+  dishes Dish[]
+}
+
+model Dish {
+  id          Int         @id @default(autoincrement())
+  name        String
+  description String
+  price       Decimal     @db.Decimal(10, 2)
+  calories    Int
+  allergens   String?
+  imageUrl    String?
+  categoryId  Int
+  category    Category    @relation(fields: [categoryId], references: [id])
+  menuItems   MenuItem[]
+  favorites   Favorite[]
+}
+
+model Menu {
+  id        Int        @id @default(autoincrement())
+  menuDate  DateTime   @unique
+  items     MenuItem[]
+  createdAt DateTime   @default(now())
+}
+
+model MenuItem {
+  id        Int      @id @default(autoincrement())
+  menuId    Int
+  dishId    Int
+  mealType  MealType
+  isActive  Boolean  @default(true)
+  menu      Menu     @relation(fields: [menuId], references: [id])
+  dish      Dish     @relation(fields: [dishId], references: [id])
+
+  @@unique([menuId, dishId, mealType])
+}
+
+model Favorite {
+  id        Int      @id @default(autoincrement())
+  userId    Int
+  dishId    Int
+  createdAt DateTime @default(now())
+  user      User     @relation(fields: [userId], references: [id])
+  dish      Dish     @relation(fields: [dishId], references: [id])
+
+  @@unique([userId, dishId])
+}

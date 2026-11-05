@@ -1,0 +1,33 @@
+import "dotenv/config";
+import cors from "cors";
+import express from "express";
+import adminRoutes from "./routes/admin.js";
+import authRoutes from "./routes/auth.js";
+import dishRoutes from "./routes/dishes.js";
+import favoriteRoutes from "./routes/favorites.js";
+import menuRoutes from "./routes/menus.js";
+import reportRoutes from "./routes/reports.js";
+import statsRoutes from "./routes/stats.js";
+import userRoutes from "./routes/users.js";
+import { errorHandler } from "./middleware/error.js";
+
+const app = express();
+const port = Number(process.env.PORT || 4000);
+
+app.use(cors());
+app.use(express.json());
+
+app.get("/health", (_req, res) => res.json({ status: "ok" }));
+app.use("/stats", statsRoutes);
+app.use("/auth", authRoutes);
+app.use("/admin", adminRoutes);
+app.use("/users", userRoutes);
+app.use("/dishes", dishRoutes);
+app.use("/menus", menuRoutes);
+app.use("/favorites", favoriteRoutes);
+app.use("/reports", reportRoutes);
+app.use(errorHandler);
+
+app.listen(port, () => {
+  console.log(`Backend started on http://localhost:${port}`);
+});

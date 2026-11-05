@@ -1,0 +1,348 @@
+/**
+ * Режим вайрфрейма — активен при class="wireframe-mode" на <html>.
+ * Ч/б, без теней и градиентов, плейсхолдеры вместо фото, схематичная вёрстка.
+ */
+
+.wireframe-mode {
+  --primary: #333;
+  --primary-dark: #111;
+  --secondary: #666;
+  --text: #111;
+  --muted: #666;
+  --bg: #f5f5f5;
+  --surface: #fff;
+  --border: #333;
+  --shadow: none;
+}
+
+.wireframe-mode,
+.wireframe-mode * {
+  font-family: Arial, Helvetica, sans-serif !important;
+}
+
+.wireframe-mode body {
+  background: var(--bg) !important;
+  color: var(--text) !important;
+  filter: grayscale(1);
+}
+
+.wireframe-mode img,
+.wireframe-mode .dish-card__image,
+.wireframe-mode .dish-details__image {
+  object-fit: none !important;
+  background: #ddd !important;
+  border: 2px dashed #888 !important;
+}
+
+.wireframe-mode .header,
+.wireframe-mode .footer,
+.wireframe-mode .card,
+.wireframe-mode .modal,
+.wireframe-mode .drawer,
+.wireframe-mode .dish-card,
+.wireframe-mode .chart-block,
+.wireframe-mode .home-hero,
+.wireframe-mode .auth-card {
+  background: #fff !important;
+  border: 2px solid #333 !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  backdrop-filter: none !important;
+}
+
+.wireframe-mode .button,
+.wireframe-mode button {
+  background: #fff !important;
+  color: #111 !important;
+  border: 2px solid #333 !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  font-weight: 600 !important;
+  text-transform: none;
+}
+
+.wireframe-mode .button:hover,
+.wireframe-mode button:hover {
+  transform: none !important;
+  background: #eee !important;
+  filter: none !important;
+}
+
+.wireframe-mode .button--ghost,
+.wireframe-mode .tab-btn {
+  background: #f0f0f0 !important;
+  color: #111 !important;
+}
+
+.wireframe-mode .tab-btn.active {
+  background: #ccc !important;
+  border: 2px solid #000 !important;
+}
+
+.wireframe-mode .nav-link {
+  background: #fff !important;
+  border: 1px solid #333 !important;
+  border-radius: 0 !important;
+  color: #111 !important;
+}
+
+.wireframe-mode .nav-link.active {
+  background: #ddd !important;
+  border: 2px solid #000 !important;
+}
+
+.wireframe-mode .input,
+.wireframe-mode input,
+.wireframe-mode .select,
+.wireframe-mode select,
+.wireframe-mode textarea {
+  background: #fff !important;
+  border: 2px dashed #555 !important;
+  border-radius: 0 !important;
+  color: #111 !important;
+}
+
+.wireframe-mode .input::placeholder,
+.wireframe-mode input::placeholder {
+  color: #888 !important;
+}
+
+.wireframe-mode .badge,
+.wireframe-mode .tag,
+.wireframe-mode .user-badge,
+.wireframe-mode .dish-card__category,
+.wireframe-mode .status-badge {
+  background: #e8e8e8 !important;
+  color: #111 !important;
+  border: 1px solid #333 !important;
+  border-radius: 0 !important;
+}
+
+.wireframe-mode .snackbar {
+  background: #333 !important;
+  color: #fff !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+}
+
+.wireframe-mode .table {
+  border: 2px solid #333 !important;
+  border-radius: 0 !important;
+}
+
+.wireframe-mode .table th,
+.wireframe-mode .table td {
+  border: 1px solid #333 !important;
+  background: #fff !important;
+}
+
+.wireframe-mode .table th {
+  background: #e0e0e0 !important;
+}
+
+.wireframe-mode .bar-chart-bar {
+  background: repeating-linear-gradient(
+    90deg,
+    #bbb,
+    #bbb 4px,
+    #ddd 4px,
+    #ddd 8px
+  ) !important;
+  border: 1px solid #333 !important;
+  border-radius: 0 !important;
+}
+
+.wireframe-mode .status-dot,
+.wireframe-mode .status-pending,
+.wireframe-mode .status-confirmed,
+.wireframe-mode .status-completed,
+.wireframe-mode .status-cancelled {
+  background: #666 !important;
+  border: 1px solid #000 !important;
+}
+
+.wireframe-mode .stats-ranked .rank {
+  background: #ccc !important;
+  color: #111 !important;
+  border: 2px solid #333 !important;
+  border-radius: 0 !important;
+}
+
+.wireframe-mode .dish-card:hover {
+  transform: none !important;
+  box-shadow: none !important;
+}
+
+.wireframe-mode .dish-card__image-link {
+  background: #e5e5e5;
+  border-bottom: 2px dashed #888;
+  min-height: 160px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.wireframe-mode .dish-card__image-link::after {
+  content: "[ Изображение ]";
+  color: #777;
+  font-size: 0.85rem;
+  letter-spacing: 0.05em;
+}
+
+.wireframe-mode .dish-details__image-wrap {
+  background: #e5e5e5;
+  border: 2px dashed #888 !important;
+  min-height: 280px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.wireframe-mode .dish-details__image-wrap::after {
+  content: "[ Изображение блюда ]";
+  color: #777;
+}
+
+.wireframe-mode a {
+  color: #111 !important;
+  text-decoration: underline !important;
+}
+
+.wireframe-mode .form-error,
+.wireframe-mode .form-success {
+  background: #f0f0f0 !important;
+  color: #111 !important;
+  border: 2px dashed #333 !important;
+}
+
+.wireframe-mode .loader,
+.wireframe-mode .loader-page,
+.wireframe-mode .empty-state {
+  color: #555 !important;
+  border: 2px dashed #999;
+  padding: 24px;
+  text-align: center;
+}
+
+.wireframe-mode .loader::before {
+  content: "Загрузка… ";
+}
+
+.wireframe-mode .home-hero::before,
+.wireframe-mode .site-title::after {
+  display: none;
+}
+
+.wireframe-mode .wireframe-banner {
+  display: flex;
+}
+
+/* Схематичные подписи блоков для скриншотов макета */
+.wireframe-mode main {
+  outline: 1px dotted #aaa;
+  outline-offset: 4px;
+}
+
+.wireframe-mode .dish-grid {
+  gap: 16px;
+}
+
+.wireframe-mode .pagination {
+  border: 1px dashed #999;
+  padding: 8px;
+}
+
+/* Wireframe Burger Menu */
+.wireframe-mode .burger-btn {
+  background: #fff !important;
+  border: 2px solid #333 !important;
+  border-radius: 0 !important;
+}
+
+.wireframe-mode .burger-line {
+  background: #111 !important;
+}
+
+.wireframe-mode .mobile-menu {
+  background: #fff !important;
+  border-left: 2px solid #333 !important;
+  box-shadow: -4px 0 0 #333 !important;
+}
+
+.wireframe-mode .mobile-menu-header {
+  background: #f0f0f0 !important;
+  border-bottom: 2px solid #333 !important;
+}
+
+.wireframe-mode .mobile-menu-title {
+  color: #111 !important;
+}
+
+.wireframe-mode .mobile-menu-close {
+  background: #fff !important;
+  border: 2px solid #333 !important;
+  border-radius: 0 !important;
+  color: #111 !important;
+}
+
+.wireframe-mode .mobile-menu-close:hover {
+  background: #ddd !important;
+  color: #111 !important;
+}
+
+.wireframe-mode .mobile-nav-link {
+  color: #111 !important;
+  border: 1px solid transparent !important;
+}
+
+.wireframe-mode .mobile-nav-link:hover,
+.wireframe-mode .mobile-nav-link.active {
+  background: #e0e0e0 !important;
+  color: #111 !important;
+  border: 1px solid #333 !important;
+}
+
+.wireframe-mode .mobile-menu-user {
+  background: #f0f0f0 !important;
+  border-top: 2px solid #333 !important;
+}
+
+.wireframe-mode .mobile-user-name {
+  color: #111 !important;
+}
+
+.wireframe-mode .mobile-user-role {
+  color: #555 !important;
+}
+
+.wireframe-mode .mobile-logout-btn {
+  background: #fff !important;
+  color: #111 !important;
+  border: 2px solid #333 !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+}
+
+.wireframe-mode .mobile-menu-overlay {
+  background: rgba(0, 0, 0, 0.7) !important;
+}
+
+@media (max-width: 768px) {
+  .wireframe-mode .burger-btn {
+    display: flex !important;
+  }
+  
+  .wireframe-mode .navbar {
+    display: none;
+  }
+  
+  .wireframe-mode .header-auth .user-badge,
+  .wireframe-mode .header-auth .button {
+    display: none !important;
+  }
+  
+  .wireframe-mode .mobile-menu-overlay.is-visible,
+  .wireframe-mode .mobile-menu.is-open {
+    display: block;
+  }
+}

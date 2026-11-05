@@ -1,0 +1,25 @@
+.wireframe-banner {
+  display: none;
+  position: sticky;
+  top: 0;
+  z-index: 9999;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  padding: 8px 16px;
+  background: #111;
+  color: #fff;
+  font-size: 0.85rem;
+  border-bottom: 3px solid #fff;
+  text-align: center;
+}
+
+.wireframe-banner strong {
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.wireframe-banner span {
+  opacity: 0.9;
+}

@@ -1,0 +1,28 @@
+Transport Logistics Freeware End-User License Agreement (EULA)
+
+Copyright (c) 2026 Petrov A.V. All rights reserved.
+
+1. LICENSE GRANT
+The copyright holder grants the user a limited, non-exclusive, non-transferable, royalty-free right to install and use Transport Logistics for personal, educational and other non-commercial purposes.
+
+2. PROPRIETARY STATUS
+Transport Logistics is freeware, not open-source software. All exclusive rights to the software, source code, design and documentation remain with the copyright holder. No rights are granted except those expressly stated in this agreement.
+
+3. RESTRICTIONS
+Unless prior written permission is obtained from the copyright holder, the user may not:
+- sell, rent, sublicense or otherwise commercially exploit the software;
+- redistribute the software or its source code, in whole or in part;
+- modify, adapt or create derivative works for distribution;
+- reverse engineer, decompile or disassemble the software, except to the extent such restriction is prohibited by applicable law;
+- remove or alter copyright, authorship or license notices.
+
+4. EDUCATIONAL REVIEW
+The source code may be provided to an instructor or reviewer solely for assessment of the coursework project. Such access does not grant permission to redistribute, publish, modify or commercially use the source code.
+
+5. NO WARRANTY
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED. TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, THE COPYRIGHT HOLDER SHALL NOT BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY ARISING FROM THE USE OF THE SOFTWARE.
+
+6. ACCEPTANCE
+Installation, launch or other use of the software constitutes acceptance of this EULA. If you do not accept these terms, do not use the software.
+
+This freeware EULA is a custom proprietary license and is not an open-source license.
